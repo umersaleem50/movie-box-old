@@ -1,0 +1,67 @@
+@import "../../../Colors.scss";
+.SearchInput {
+  width: 35rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: $color-white;
+  border-radius: 0.5rem;
+
+  overflow: hidden;
+  // background-color: rgba($color-white-light, 1);
+}
+
+.Input {
+  width: 100%;
+  min-height: 3.5rem;
+
+  background-color: $color-white-light;
+  color: $color-black-light;
+  font-weight: 700;
+  padding: 0 1rem;
+  outline: none;
+  // margin-bottom: 1rem;
+  border: none;
+  transition: all 0.2s ease-in;
+  font-size: 1.6rem;
+  text-align: center;
+  &:focus {
+    background-color: $color-white;
+  }
+  // &:not(:empty) ~ .Results {
+  //   height: auto;
+  //   opacity: 1;
+  // }
+}
+.Search {
+  position: relative;
+
+  .btnToggle {
+    top: 1rem;
+    right: 1rem;
+    position: absolute;
+  }
+}
+
+.Results {
+  display: flex;
+  flex-direction: column;
+  // overflow: hidden;
+  // padding: 1rem;
+  // background-color: rgba($color-white, 0.4);
+  background-color: $color-white;
+  height: auto;
+  opacity: 1;
+  transition: all 0.2s;
+  border-radius: 1rem;
+}
+
+// .ToggleResult {
+//   height: auto;
+//   opacity: 1;
+// }
+
+.Filter {
+  background-color: $color-white;
+  // display: flex;
+}

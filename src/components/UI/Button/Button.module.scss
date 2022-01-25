@@ -1,0 +1,127 @@
+@import "../../../Colors.scss";
+.Button {
+  padding: 1rem 1rem;
+  width: 10rem;
+  border-radius: 0.5rem;
+  display: inline-block;
+  color: $color-white;
+  font-weight: 700;
+  font-size: 1.4rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: $color-white-light;
+  // position: relative;
+  transition: all 0.2s ease-in;
+  &:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0.3rem 0.3rem 0.5rem rgba($color-overlay, 0.2);
+  }
+}
+.Text {
+  background-color: transparent;
+
+  &:hover {
+    background-color: $color-primary;
+    transform: translateY(0);
+  }
+
+  &:hover .active {
+    color: $color-white;
+  }
+
+  .active {
+    color: $color-primary;
+  }
+}
+
+.Round {
+  width: 4rem;
+  height: 4rem;
+  padding: 1rem;
+  border-radius: 50%;
+  background-color: $color-primary;
+  color: transparent;
+  position: relative;
+  &::before,
+  &::after {
+    content: "";
+    width: 2.5rem;
+    top: 50%;
+    left: 50%;
+    height: 0.4rem;
+    border-radius: 0.3rem;
+    background-color: $color-white;
+
+    position: absolute;
+  }
+
+  &::before {
+    transform: translate(-50%, 0.6rem);
+  }
+  &::after {
+    transform: translate(-50%, -0.7rem);
+  }
+}
+
+.Close {
+  width: 3rem;
+  height: 3rem;
+  position: relative;
+  background-color: transparent;
+  color: transparent;
+
+  &::before,
+  &::after {
+    content: "";
+    width: 2rem;
+    height: 0.3rem;
+    border-radius: 1rem;
+    background-color: rgba($color-overlay, 0.2);
+    position: absolute;
+    transition: all 0.2s ease-in;
+  }
+  &::before {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    // transform-origin: left;
+  }
+  &::after {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    // transform-origin: left;
+  }
+  &:hover::before,
+  &:hover::after {
+    background-color: rgba($color-primary, 0.8);
+  }
+
+  &:hover {
+    transform: translateY(0) scale(1);
+    box-shadow: none;
+  }
+}
+
+.Outline {
+  background-color: transparent;
+  color: rgba($color-black-light, 0.5);
+  //   border-left: 0.3rem solid rgba($color-white, 1);
+  &:hover {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+}
+.outlineActive {
+  //   border: 0.3rem solid rgba($color-primary, 1);
+  color: rgba($color-primary, 1);
+}
+
+.textActive {
+  color: $color-primary;
+
+  &:hover {
+    color: $color-white;
+  }
+}
