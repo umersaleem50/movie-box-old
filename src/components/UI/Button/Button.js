@@ -15,6 +15,9 @@ const Button = React.forwardRef((props, ref) => {
     case "full":
       assignClass.push(classes.Full);
       break;
+    case "trailer":
+      assignClass.push(classes.Trailer);
+      break;
     case "close":
       assignClass.push(classes.Close);
       break;

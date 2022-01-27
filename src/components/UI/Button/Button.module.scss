@@ -18,6 +18,34 @@
     box-shadow: 0.3rem 0.3rem 0.5rem rgba($color-overlay, 0.2);
   }
 }
+
+.Trailer {
+  background-color: $color-primary;
+  width: auto;
+  padding: 1.2rem 2rem;
+  display: flex;
+  align-items: center;
+  div {
+    width: 2rem;
+    height: 2rem;
+    background-color: $color-white;
+    margin-right: 1rem;
+    border-radius: 50%;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 0.8rem;
+      height: 0.85rem;
+      background-color: $color-primary;
+      top: 50%;
+      left: 45%;
+      transform: translate(-50%, -50%);
+      clip-path: polygon(0 50%, 100% 0, 100% 100%);
+    }
+  }
+}
+
 .Text {
   background-color: transparent;
 

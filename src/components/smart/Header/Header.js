@@ -4,12 +4,13 @@ import VideoBox from "../../dumb/VideoBox/VideoBox";
 import video from "../../../assets/yourname.mp4";
 import SideMenu from "../../dumb/SideMenu/SideMenu";
 import Navigation from "../../dumb/Navigation/Navigation";
+import MovieDetail from "../../dumb/MovieDetail/Big/MovieDetail";
 class Header extends Component {
   state = {
     movies: [
       {
         src: video,
-        heading: "Arcane:2021",
+        heading: "Arcane: 2021",
         detail:
           "Arcane is an animated action-adventure series created by Christian Linke and Alex Yee for Netflix. Produced by Fortiche Production and Riot Games",
       },
@@ -21,13 +22,24 @@ class Header extends Component {
     this.setState((prevState, prevProps) => ({
       toggleSideMenu: !prevState.toggleSideMenu,
     }));
-    console.log("clicked", this.state.toggleSideMenu);
+    // console.log("clicked", this.state.toggleSideMenu);
   };
 
   render() {
     return (
       <header className={classes.Header}>
-        <Navigation data={this.state.movies} toggleSide={this.toggleSideBar} />
+        <div className={classes.Container}>
+          <Navigation
+            data={this.state.movies}
+            toggleSide={this.toggleSideBar}
+          />
+          <div className={classes.Details}>
+            <MovieDetail
+              heading={this.state.movies[0].heading}
+              detail={this.state.movies[0].detail}
+            />
+          </div>
+        </div>
         <SideMenu
           activeLink="Home"
           toggle={this.state.toggleSideMenu}

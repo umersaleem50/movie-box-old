@@ -41,7 +41,7 @@ const SearchInput = (axios = defautlAxios, params, props = {}) => {
           })
         );
       this.setState({ isLoading: false });
-      // console.log(this.state.searchResult);
+      console.log(this.state.searchResult);
     }
 
     generateResult() {

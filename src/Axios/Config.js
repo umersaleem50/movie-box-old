@@ -7,4 +7,6 @@ const params = {
   adult: "false",
 };
 
+// console.log(params.language);
+
 export { API_KEY, params, BASE_URL_IMG };
