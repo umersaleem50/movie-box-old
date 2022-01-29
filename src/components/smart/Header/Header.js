@@ -2,12 +2,26 @@ import React, { Component } from "react";
 import classes from "./Header.module.scss";
 import VideoBox from "../../dumb/VideoBox/VideoBox";
 import video from "../../../assets/yourname.mp4";
+import video2 from "../../../assets/trailer.mp4";
 import SideMenu from "../../dumb/SideMenu/SideMenu";
 import Navigation from "../../dumb/Navigation/Navigation";
 import MovieDetail from "../../dumb/MovieDetail/Big/MovieDetail";
+import NumberSlider from "../../dumb/Slider/Number Slider/NumberSlider";
 class Header extends Component {
   state = {
     movies: [
+      {
+        src: video2,
+        heading: "Arcane: 2021",
+        detail:
+          "Arcane is an animated action-adventure series created by Christian Linke and Alex Yee for Netflix. Produced by Fortiche Production and Riot Games",
+      },
+      {
+        src: video,
+        heading: "Your Name: Koi na kamo",
+        detail:
+          "Arcane is an animated action-adventure series created by Christian Linke and Alex Yee for Netflix. Produced by Fortiche Production and Riot Games",
+      },
       {
         src: video,
         heading: "Arcane: 2021",
@@ -15,7 +29,14 @@ class Header extends Component {
           "Arcane is an animated action-adventure series created by Christian Linke and Alex Yee for Netflix. Produced by Fortiche Production and Riot Games",
       },
     ],
+    currentMovieIndex: 1,
     toggleSideMenu: false,
+  };
+
+  changeMovieIndex = (number) => {
+    if (!number) return;
+
+    this.setState({ currentMovieIndex: +number });
   };
 
   toggleSideBar = () => {
@@ -35,10 +56,19 @@ class Header extends Component {
           />
           <div className={classes.Details}>
             <MovieDetail
-              heading={this.state.movies[0].heading}
-              detail={this.state.movies[0].detail}
+              heading={
+                this.state.movies[this.state.currentMovieIndex - 1].heading
+              }
+              detail={
+                this.state.movies[this.state.currentMovieIndex - 1].detail
+              }
             />
           </div>
+          <NumberSlider
+            sliderLength={this.state.movies.length}
+            activeNum={this.state.currentMovieIndex}
+            changeIndex={this.changeMovieIndex}
+          />
         </div>
         <SideMenu
           activeLink="Home"
@@ -46,7 +76,7 @@ class Header extends Component {
           closeSideBar={this.toggleSideBar}
         />
         <VideoBox
-          src={this.state.movies[0].src}
+          src={this.state.movies[this.state.currentMovieIndex - 1].src}
           background={true}
           overlay={0.5}
         />
