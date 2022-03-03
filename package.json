@@ -36,11 +36,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-<<<<<<< HEAD
-  },
-  "devDependencies": {
-    "node-sass": "^7.0.1"
-=======
->>>>>>> 3ed63f1 (Initialize project using Create React App)
   }
 }
